@@ -1,0 +1,85 @@
+{
+    "version": 1,
+    "author": "Uri Shaked",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "board-pi-pico-w",
+        "id": "pico",
+        "top": 67.9,
+        "left": 151.65,
+        "rotate": 90,
+        "attrs": { "builder": "pico-sdk" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": -78,
+        "left": 189,
+        "rotate": 90,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": -20.4,
+        "left": 189,
+        "rotate": 90,
+        "attrs": { "color": "limegreen" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led3",
+        "top": -49.2,
+        "left": 189,
+        "rotate": 90,
+        "attrs": { "color": "blue" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 33.6,
+        "left": 76.25,
+        "rotate": 90,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 33.6,
+        "left": 95.45,
+        "rotate": 90,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r3",
+        "top": 33.6,
+        "left": 114.65,
+        "rotate": 90,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-pushbutton",
+        "id": "btn1",
+        "top": 47.9,
+        "left": 243.5,
+        "rotate": 90,
+        "attrs": { "color": "green" }
+      }
+    ],
+    "connections": [
+      [ "led1:A", "r1:1", "green", [ "v-0.4", "h-129.2" ] ],
+      [ "led3:A", "r2:1", "green", [ "h-57.6", "v19.2" ] ],
+      [ "led2:A", "r3:1", "green", [ "v0", "h19.2" ] ],
+      [ "pico:3V3", "btn1:1.r", "red", [ "v29.56", "h-201" ] ],
+      [ "led1:C", "pico:GND.3", "green", [ "v0", "h-47.6" ] ],
+      [ "led2:C", "pico:GND.3", "green", [ "v0", "h-28.4" ] ],
+      [ "led3:C", "pico:GND.3", "green", [ "v0", "h-28.4" ] ],
+      [ "r1:2", "pico:GP13", "green", [ "v27.6", "h28.24" ] ],
+      [ "r2:2", "pico:GP12", "green", [ "v27.6", "h9.04" ] ],
+      [ "r3:2", "pico:GP11", "green", [ "h0" ] ],
+      [ "btn1:2.l", "pico:GP5", "green", [ "h-57.8", "v95.55" ] ]
+    ],
+    "dependencies": {}
+  }
